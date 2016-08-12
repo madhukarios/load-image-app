@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMedia
 //import CoreLocation
 
 class ViewController: UIViewController {
@@ -16,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var myName: UITextField!
     @IBOutlet weak var myButton: UIButton!
     @IBOutlet weak var myImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,14 +30,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClick(sender: AnyObject) {
-        //switch myName.text(
-        
-        //case
-        //var name = myName.text?.lowercaseString
+        myImage.contentMode = .ScaleAspectFill
         myImage.image=UIImage(named: (myName.text?.lowercaseString)!)
-        //myButton.titleLabel = "\(myName.text)"
-        //wait(10)
         
+        myImage.resignFirstResponder()
+        myName.resignFirstResponder()
     }
 
     @IBAction func myTextSelected(sender: AnyObject) {
