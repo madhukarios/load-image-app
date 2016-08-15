@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="loadImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMt-cd-lP3">
+                                <rect key="frame" x="113" y="84" width="94" height="30"/>
+                                <state key="normal" title="Show Image"/>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchDown" id="DCS-jy-7ku"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBd-8H-Zlw">
+                                <rect key="frame" x="14" y="361" width="286" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.7760127314814802" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Ndy-pB-xDd"/>
+                                    <constraint firstAttribute="height" constant="128" id="jEb-la-U0z"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edT-al-77P">
+                                <rect key="frame" x="113" y="38" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="myTextSelected:" destination="BYZ-38-t0r" eventType="touchDown" id="sbP-e5-qnm"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CBd-8H-Zlw" secondAttribute="bottom" constant="79" id="Ir0-Gj-f81"/>
+                            <constraint firstItem="FMt-cd-lP3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q4R-f8-9EL"/>
+                            <constraint firstItem="CBd-8H-Zlw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UG8-lv-eTo"/>
+                            <constraint firstItem="edT-al-77P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qOF-qT-khK"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myButton" destination="FMt-cd-lP3" id="DKg-yo-c9i"/>
+                        <outlet property="myImage" destination="CBd-8H-Zlw" id="UU6-r6-qht"/>
+                        <outlet property="myName" destination="edT-al-77P" id="2Bn-1k-1my"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="451" y="480"/>
         </scene>
     </scenes>
 </document>
